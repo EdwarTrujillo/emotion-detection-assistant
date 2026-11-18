@@ -28,3 +28,11 @@ Formato corto: contexto, decisión y consecuencias.
 - **Contexto:** la interfaz se lanza desde Jupyter y debe tener video, panel de emociones y chat.
 - **Decisión:** Gradio en lugar de Flask; chatbot con la API de Gemini (plan gratuito) que solo recibe etiquetas y porcentajes.
 - **Consecuencias:** menos código y se ve dentro de Jupyter; depende de conexión a internet para el chat.
+
+## ADR-006: Limpieza de duplicados para evitar fuga de datos (18 nov 2026)
+- **Contexto:** el EDA encontró 531 imágenes de test idénticas a imágenes de train (hash MD5),
+  1.236 duplicados dentro de train y 57 imágenes idénticas con etiquetas distintas.
+- **Decisión:** limpiar solo train (quitar las imágenes que están en test, los duplicados exactos y las de
+  etiquetas contradictorias). El conjunto de test no se modifica.
+- **Consecuencias:** la accuracy en test es honesta (sin fuga) y sigue siendo comparable con otros trabajos
+  que usan el test original. Train pierde menos del 5 % de sus imágenes.

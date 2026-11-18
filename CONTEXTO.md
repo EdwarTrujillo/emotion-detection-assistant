@@ -11,9 +11,11 @@ Más adelante: Gradio (interfaz) y Google Gemini (asistente).
 Ver `docs/adr.md`.
 
 ## Estado
-- [x] Fase 1a: entorno conda `emotion-ai` con Python 3.11 y TensorFlow 2.21.0, registrado como kernel de Jupyter (18 nov)
-- [x] Fase 1b: repositorio en GitHub con la estructura de carpetas (18 nov)
-- [ ] Fase 1c: dataset FER-2013 y EDA (`notebooks/01_data_exploration.ipynb`)
+- [x] Fase 1: entorno conda `emotion-ai` (Python 3.11, TF 2.21.0) como kernel de Jupyter; repo en GitHub;
+      dataset FER-2013 en `data/fer2013/`; EDA en `notebooks/01_data_exploration.ipynb` (18 nov)
+  - 35.887 imágenes (28.709 train / 7.178 test), todas 48x48 en grises
+  - Desbalance 16,5 a 1 (happy 7.215 vs disgust 436)
+  - Fuga detectada: 531 imágenes de test repetidas en train → se limpia train en la fase 2 (ADR-006)
 - [ ] Fase 2: entrenamiento de los modelos base y mejorado en Colab
 - [ ] Fase 3: detección en tiempo real con webcam
 - [ ] Fase 4: interfaz con Gradio
@@ -22,4 +24,4 @@ Ver `docs/adr.md`.
 - [ ] Fase 7: video y entrega (24 nov, en la noche)
 
 ## Próximos pasos
-Crear la cuenta de Kaggle, descargar FER-2013 en `data/fer2013/` y ejecutar el notebook de EDA.
+Fase 2 en Colab: limpiar train (ADR-006), separar validación, entrenar modelo base y mejorado, evaluar en test.
