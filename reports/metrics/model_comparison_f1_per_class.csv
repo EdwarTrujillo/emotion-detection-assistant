@@ -1,0 +1,8 @@
+,base_model,improved_model
+angry,0.4885,0.5777
+disgust,0.5287,0.5118
+fear,0.4415,0.4433
+happy,0.7982,0.8666
+neutral,0.5367,0.6002
+sad,0.4541,0.4902
+surprise,0.7265,0.746

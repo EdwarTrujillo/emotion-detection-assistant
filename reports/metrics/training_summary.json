@@ -1,0 +1,38 @@
+{
+  "cleaning": {
+    "train_before": 28709,
+    "removed_leak_with_test": 703,
+    "removed_conflicting_labels": 73,
+    "removed_exact_duplicates": 1021,
+    "train_after": 26912,
+    "test_unchanged": 7178
+  },
+  "split_sizes": {
+    "train": 24220,
+    "validation": 2692,
+    "test": 7178
+  },
+  "base_model": {
+    "test_accuracy": 0.5887,
+    "test_top2_accuracy": 0.7738,
+    "macro_f1": 0.5678,
+    "weighted_f1": 0.5888,
+    "training_minutes": 5.14,
+    "epochs_trained": 50,
+    "parameters": 2345607,
+    "tensorflow_version": "2.21.0",
+    "keras_version": "3.13.2"
+  },
+  "improved_model": {
+    "test_accuracy": 0.64,
+    "test_top2_accuracy": 0.8228,
+    "macro_f1": 0.6051,
+    "weighted_f1": 0.6371,
+    "training_minutes": 15.65,
+    "epochs_trained": 45,
+    "parameters": 5872455,
+    "tensorflow_version": "2.21.0",
+    "keras_version": "3.13.2"
+  },
+  "reference_accuracy": 0.632
+}
