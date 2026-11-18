@@ -11,12 +11,12 @@ Más adelante: Gradio (interfaz) y Google Gemini (asistente).
 Ver `docs/adr.md`.
 
 ## Estado
-- [x] Fase 1: entorno conda `emotion-ai` (Python 3.11, TF 2.21.0) como kernel de Jupyter; repo en GitHub;
-      dataset FER-2013 en `data/fer2013/`; EDA en `notebooks/01_data_exploration.ipynb` (18 nov)
-  - 35.887 imágenes (28.709 train / 7.178 test), todas 48x48 en grises
-  - Desbalance 16,5 a 1 (happy 7.215 vs disgust 436)
-  - Fuga detectada: 531 imágenes de test repetidas en train → se limpia train en la fase 2 (ADR-006)
-- [ ] Fase 2: entrenamiento de los modelos base y mejorado en Colab
+- [x] Fase 1: entorno, repo, dataset y EDA (`notebooks/01_data_exploration.ipynb`) (18 nov)
+  - 35.887 imágenes; desbalance 16,5 a 1; fuga detectada (531 imágenes de test en train) → ADR-006
+- [x] Fase 2: entrenamiento en Colab (`notebooks/02_model_training.ipynb`) (18 nov)
+  - Train limpio 24.220 / validación 2.692 / test 7.178
+  - Base 58,9 % · Mejorado 64,0 % · v2 65,9 % · **v2 + TTA 66,5 % (top-2 83,6 %)**
+  - Modelo final: `models/improved_model_v2.keras` con TTA (`models/selected_model.json`), elegido por validación
 - [ ] Fase 3: detección en tiempo real con webcam
 - [ ] Fase 4: interfaz con Gradio
 - [ ] Fase 5: asistente con LLM, pruebas, README final
@@ -24,4 +24,4 @@ Ver `docs/adr.md`.
 - [ ] Fase 7: video y entrega (24 nov, en la noche)
 
 ## Próximos pasos
-Fase 2 en Colab: limpiar train (ADR-006), separar validación, entrenar modelo base y mejorado, evaluar en test.
+Fase 3: `notebooks/03_realtime_detection.ipynb` con Haar Cascade + modelo seleccionado (con TTA), suavizado e historial.

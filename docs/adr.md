@@ -36,3 +36,11 @@ Formato corto: contexto, decisión y consecuencias.
   etiquetas contradictorias). El conjunto de test no se modifica.
 - **Consecuencias:** la accuracy en test es honesta (sin fuga) y sigue siendo comparable con otros trabajos
   que usan el test original. Train pierde menos del 5 % de sus imágenes.
+
+
+## ADR-007: Segunda iteración (v2), TTA y selección del modelo con validación (18 nov 2026)
+- **Contexto:** el modelo mejorado se detuvo en la época 45 (EarlyStopping sobre val_loss) con 64,0 % en test.
+- **Decisión:** v2 con la misma arquitectura, EarlyStopping sobre val_accuracy (paciencia 20, máx. 120 épocas) y
+  test-time augmentation (promedio con el espejo horizontal). El modelo final se elige por accuracy en validación.
+- **Consecuencias:** v2 + TTA logra 66,5 % top-1 y 83,6 % top-2 en test (base honesto: 58,9 %). La meta de 68-70 %
+  no se alcanzó; se acepta por tiempo. En tiempo real cada rostro se predice dos veces (original y espejo).
