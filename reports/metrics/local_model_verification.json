@@ -9,5 +9,5 @@
   "test_accuracy": 0.6654,
   "test_top2_accuracy": 0.8363,
   "reference_accuracy": 0.6654,
-  "ms_per_face_batched": 14.416
+  "ms_per_face_batched": 14.226
 }
